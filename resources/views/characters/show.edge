@@ -1,0 +1,129 @@
+@layout('layout')
+
+@section('body')
+<div class="text-magnolia">
+	<h1 class="font-medium text-magnolia px-10" style="font-size: 52px;">Ficha de {{ character.token.name }}</h1>
+	<input id="characterId" value={{ character.id }} hidden>
+	<div class="flex flex-row justify-between">
+		<div class="flex px-10"> <!--- Container dos atributos e mod -->
+			<div class="flex-col"> <!-- Atributos -->
+				<div>
+					<label class="text-magnolia" for="name">Força</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="strength" value="{{ character.token.strength.value }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Destreza</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="dexterity" value="{{ character.token.dexterity.value }}">
+					</div>
+				<div>
+					<label class="text-magnolia" for="name">Constituição</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="constituition" value="{{ character.token.constituition.value }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Inteligencia</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="intelligence" value="{{ character.token.intelligence.value }}">				
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Sabedoria</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="wisdom" value="{{ character.token.wisdom.value }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Carisma</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="charisma" value="{{ character.token.charisma.value }}">
+				</div>
+			</div>
+			<div class="flex-col ml-5">
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="strengthM" value="{{ character.token.strength.modifier }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="dexterityM" value="{{ character.token.dexterity.modifier }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="constituitionM" value="{{ character.token.constituition.modifier }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="intelligenceM" value="{{ character.token.intelligence.modifier }}">				
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="wisdomM" value="{{ character.token.wisdom.modifier }}">
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Modificador</label>
+					<input type="number" class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="width: 70px; height: 45px; border-radius: 7px;" id="charismaM" value="{{ character.token.charisma.modifier }}">
+				</div> <!-- Mod -->
+			</div>
+		</div>
+		<div class="flex flex-col"> <!-- Container dos dados -->
+			<div class="flex flex-row">
+				<div>
+					<label class="text-magnolia" for="name">Classe e nivel</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.classAndLevel }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Antecedente</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.antecedent }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Nome do jogador</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.playerName }}" disabled>
+				</div>
+			</div>
+			<div class="flex flex-row mt-3">
+				<div>
+					<label class="text-magnolia" for="name">Raça</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.race }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Alinhamento</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.alignment }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Pontos de experiencia</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.experiencePoints }}" disabled>
+				</div>
+			</div>
+			<div class="flex flex-row mt-3">
+				<div>
+					<label class="text-magnolia" for="name">Classe de armadura</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.armorClass }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Iniciativa</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.initiative }}" disabled>
+				</div>
+				<div class="ml-2">
+					<label class="text-magnolia" for="name">Deslocamento</label>
+					<input class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 45px; border-radius: 7px;" value="{{ character.token.speed }}" disabled>
+				</div>
+			</div>
+		</div>
+		<div class="flex">
+			<div class="flex flex-col mr-5">
+				<div>
+					<label class="text-magnolia" for="name">Traços de personalidade</label>
+					<textarea class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="border-radius: 7px;" disabled>{{ character.token.personalityTraits }}</textarea>
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Ideais</label>
+					<textarea class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="border-radius: 7px;" disabled>{{ character.token.ideals }}</textarea>
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Vinculos</label>
+					<textarea class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 150px; border-radius: 7px;" disabled>{{ character.token.bonds }}</textarea>
+				</div>
+				<div>
+					<label class="text-magnolia" for="name">Fraquezas</label>
+					<textarea class="block w-full bg-raisin p-3 text-magnolia focus:outline-none" style="height: 150px; border-radius: 7px;" disabled>{{ character.token.flaws }}</textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ script('char-manager') }}
+@endsection
