@@ -1,0 +1,20 @@
+@layout('layout')
+
+@section('body')
+<div>
+	<h1 class="font-medium text-magnolia px-10" style="font-size: 52px;">Fichas de {{ campaign.name }}</h1>
+	<div class="flex flex-col items-center flex-wrap lg:flex-row px-10">
+		<div class="modal-open border-dashed border border-aquamarine w-64 h-64 flex items-center justify-center flex-col rounded-lg cursor-pointer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 108 108"><defs><style>.a,.c{fill:none;}.a{stroke:#61e294;}.b{stroke:none;}</style></defs><g transform="translate(-173 -418)"><g class="a" transform="translate(173 418)"><circle class="b" cx="54" cy="54" r="54"/><circle class="c" cx="54" cy="54" r="53.5"/></g><g transform="translate(211.285 457.191)"><path class="a" d="M178.034,469.5h32.248" transform="translate(-178.034 -454.191)"/><path class="a" d="M178.034,469.5h30" transform="translate(485.184 -178.034) rotate(90)"/></g></g></svg>
+			<h1 class="font-semibold text-magnolia" style="font-size: 24px;">Novo personagem</h1>
+		</div>
+		@each(character in characters)
+			<div class="m-0">
+				<a class="border border-magnolia rounded-lg w-64 h-64 flex items-center justify-center flex-col cursor-pointer" href="/characters/view/{{ character.id }}">
+					<h1 class="font-semibold text-magnolia" style="font-size: 24px;">{{ character.token.name }}</h1>
+				</a>
+			</div>
+		@endeach
+	</div>
+</div>
+@endsection

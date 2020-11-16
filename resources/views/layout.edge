@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fich.as</title>
+  {{ style('tailwindcss') }}
+</head>
+<body class="bg-raisinalt" style="font-family: Roboto, sans-serif;">
+  <nav class="flex items-center justify-between flex-wrap p-6">
+    <div class="flex items-center flex-shrink-0 mr-6">
+      <span class="font-bold text-magnolia" style="font-size: 34px;">Fich.as</span>
+    </div>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-magnolia">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+      </div>
+      <div>
+        <img class="hidden lg:inline-block p-0 rounded-full mt-4 lg:mt-0" src="{{ assetsUrl('duck.jpg') }}" width="52" height="52" alt="Pato" />
+      </div>
+    </div>
+  </nav>
+  @section('body')
+  @endsection
+  <script>
+    @section('script')
+    @endsection
+  </script>
+  {{ script('modal-manager') }}
+  {{ script('https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js') }}
+  {{ script('https://unpkg.com/@adonisjs/websocket-client@1.0.9/dist/Ws.browser.js') }}
+</body>
+</html>
